@@ -46,8 +46,8 @@ export const CountriesProvider = ({ children }: CountriesProviderProps) => {
           throw new Error("Failed to fetch data");
         }
         const countriesData = await response.json();
-        setLoading(false);
         setCountries(countriesData);
+        setLoading(false);
       } catch (error) {
         console.error(error);
       }

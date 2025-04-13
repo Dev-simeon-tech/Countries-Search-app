@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router";
 
 import { CountriesContext } from "../context/countries-context";
 import { SkeletonCountryDetails } from "../components/ui/skeletonUi";
-import notFound_bg from "../assets/no-results.png";
+import Country_404 from "../components/country-404";
 
 const CountryDetails = () => {
   const { countries, loading } = useContext(CountriesContext);
@@ -42,10 +42,7 @@ const CountryDetails = () => {
       </div>
 
       {!selectedCountry ? (
-        <div className='flex justify-center items-center flex-col mt-10 '>
-          <img className='w-[20%]' src={notFound_bg} alt='Not Found' />
-          <h1 className='text-4xl font-bold'>Country Not Found</h1>
-        </div>
+        <Country_404 />
       ) : (
         <div className='lg:w-[90%] lg:mx-auto px-4 pb-10'>
           <div className='flex flex-col lg:flex-row gap-10 lg:justify-between lg:items-center mt-20'>

@@ -14,7 +14,7 @@ const CountryCard = ({ country }: CountryCardPropTypes) => {
   return (
     <div
       onClick={onNavigateHandler}
-      className='rounded-lg overflow-hidden lg:max-w-[25rem] shadow-lg'
+      className='rounded-lg overflow-hidden lg:max-w-[25rem] cursor-pointer shadow-lg'
     >
       <img
         className='h-[12rem] min-w-full object-cover'

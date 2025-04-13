@@ -5,6 +5,7 @@ import { SkeletonHome } from "../components/ui/skeletonUi";
 import SearchInput from "../components/search-input";
 import RegionFilter from "../components/region-filter";
 import CountryCard from "../components/country-card";
+import Country_404 from "../components/country-404";
 
 const Home = () => {
   const { countries, searchFields, region, loading } =
@@ -31,11 +32,15 @@ const Home = () => {
         <RegionFilter />
       </div>
       <div className='country-grid gap-8 p-4 mt-3 lg:place-items-center lg:p-10'>
-        {loading
-          ? new Array(5).fill(0).map((_, index) => <SkeletonHome key={index} />)
-          : filteredCountries.map((country, index) => (
-              <CountryCard key={index} country={country} />
-            ))}
+        {loading ? (
+          new Array(5).fill(0).map((_, index) => <SkeletonHome key={index} />)
+        ) : !filteredCountries.length && searchFields.length ? (
+          <Country_404 />
+        ) : (
+          filteredCountries.map((country, index) => (
+            <CountryCard key={index} country={country} />
+          ))
+        )}
       </div>
     </>
   );

@@ -33,7 +33,7 @@ const Header = () => {
             clipRule='evenodd'
           />
         </svg>
-        <p>Dark mode</p>
+        <p>{theme === "dark" ? "Light" : "Dark"} mode</p>
       </button>
     </header>
   );

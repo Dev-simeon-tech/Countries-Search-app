@@ -22,7 +22,6 @@
 @layer base {
   body {
     font-family: var(--font-nunito);
-    background-color: var(--color-White);
   }
   button {
     @apply lg:cursor-pointer;

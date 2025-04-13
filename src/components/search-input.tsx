@@ -24,7 +24,7 @@ const SearchInput = () => {
         />
       </svg>
       <input
-        className='p-4 pl-14 w-full focus:outline-0 dark:bg-Dark-Blue rounded-lg'
+        className='p-4 pl-14 w-full focus:outline-0 text-Dark-Gray dark:text-White dark:bg-Dark-Blue rounded-lg'
         onChange={onSearchHandler}
         value={searchFields}
         placeholder='Search a country...'
