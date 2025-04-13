@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router";
+import ScrollToTop from "./components/ui/ScrollToTop";
 
 import Header from "./components/header";
 import Home from "./routes/home";
@@ -8,6 +9,7 @@ import CountryDetails from "./routes/country-details";
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
