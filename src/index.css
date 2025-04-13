@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  /* (Dark Mode Elements) */
+  --color-Dark-Blue: hsl(209, 23%, 22%);
+  /* (Dark Mode Background) */
+  --color-Dark-bg: hsl(207, 26%, 17%);
+  /* (Light Mode Text) */
+  --color-Very-Dark-Blue: hsl(200, 15%, 8%);
+  /* (Light Mode Input): */
+  --color-Dark-Gray: hsl(0, 0%, 52%);
+  /* (Light Mode Background) */
+  --color-Very-Light-Gray: hsl(0, 0%, 98%);
+  /* (Dark Mode Text & Light Mode Elements) */
+  --color-White: hsl(0, 0%, 100%);
+
+  --font-nunito: "Nunito Sans", sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-nunito);
+    background-color: var(--color-White);
+  }
+  button {
+    @apply lg:cursor-pointer;
+  }
+}
+@layer components {
+  .country-grid {
+    @apply grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))];
+  }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/earth.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <title>Countries Search</title>
+  </head>
+  <body class="dark:bg-Dark-bg dark:text-White">
+    <div id="root"></div>
+
+    <script>
+      const userPreference = localStorage.getItem("theme");
+      const systemPreference = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+
+      if (
+        JSON.parse(userPreference) === "dark" ||
+        (!userPreference && systemPreference)
+      ) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+      }
+    </script>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
