@@ -41,20 +41,18 @@ export const CountriesProvider = ({ children }: CountriesProviderProps) => {
 
   useEffect(() => {
     const fetchCountries = async () => {
-      setTimeout(async () => {
-        try {
-          const response = await fetch("/data.json");
+      try {
+        const response = await fetch("/data.json");
 
-          if (!response.ok) {
-            throw new Error("Failed to fetch data");
-          }
-          const countriesData = await response.json();
-          setCountries(countriesData);
-          setLoading(false);
-        } catch (error) {
-          console.error(error);
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
         }
-      }, 3000);
+        const countriesData = await response.json();
+        setCountries(countriesData);
+        setLoading(false);
+      } catch (error) {
+        console.error(error);
+      }
     };
     fetchCountries();
   }, []);
