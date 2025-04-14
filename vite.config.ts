@@ -16,8 +16,6 @@ export default defineConfig({
         short_name: "CountriesSearch",
         description:
           "This is a web app that have data about countries that a user an search for.",
-        theme_color: "#ffffff",
-        background_color: "#ffffff",
         display: "standalone",
         start_url: "/",
       },

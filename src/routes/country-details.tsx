@@ -52,12 +52,12 @@ const CountryDetails = () => {
               alt=''
             />
 
-            <article>
+            <article className='lg:w-1/2'>
               <h2 className='text-3xl font-bold pb-8'>
                 {selectedCountry?.name}
               </h2>
 
-              <div className='flex-col flex gap-12 lg:flex-row'>
+              <div className='flex-col  flex gap-12 lg:flex-row'>
                 <div className='space-y-3'>
                   <p>
                     Native Name:{" "}
@@ -113,6 +113,31 @@ const CountryDetails = () => {
                         .join(", ")}
                     </span>
                   </p>
+                </div>
+              </div>
+
+              <div className='flex flex-col lg:flex-row gap-4 lg:items-center mt-10'>
+                <p>Border Countries:</p>
+
+                <div className='flex flex-wrap lg:w-[70%] gap-2'>
+                  {selectedCountry?.borders
+                    ? selectedCountry?.borders.map((border) => {
+                        const borderCountry = countries.find(
+                          (countryValue) => countryValue.alpha3Code === border
+                        );
+                        return (
+                          <button
+                            key={border}
+                            className='bg-white dark:bg-Dark-Blue shadow-[1px_0px_10px_-3px_rgba(0,0,0,0.25)] rounded-md px-4 py-2'
+                            onClick={() =>
+                              navigate("/countries/" + borderCountry?.name)
+                            }
+                          >
+                            {borderCountry?.name}
+                          </button>
+                        );
+                      })
+                    : "No borders"}
                 </div>
               </div>
             </article>

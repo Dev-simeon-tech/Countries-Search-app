@@ -14,14 +14,16 @@ const CountryCard = ({ country }: CountryCardPropTypes) => {
   return (
     <div
       onClick={onNavigateHandler}
-      className='rounded-lg overflow-hidden lg:max-w-[25rem] cursor-pointer shadow-lg'
+      className='rounded-lg overflow-hidden lg:max-w-[25rem] h-auto cursor-pointer shadow-lg'
     >
-      <img
-        className='h-[12rem] min-w-full object-cover'
-        src={flags.png}
-        alt={name + " flag"}
-      />
-      <article className='bg-white dark:bg-Dark-Blue p-8 text-lg'>
+      <div className='overflow-hidden h-1/2'>
+        <img
+          className='h-full w-full lg:hover:scale-115 transition-transform duration-500  object-cover'
+          src={flags.png}
+          alt={name + " flag"}
+        />
+      </div>
+      <article className='bg-white h-1/2 dark:bg-Dark-Blue p-8 text-lg'>
         <h2 className='font-bold mb-6 text-2xl'>{name}</h2>
 
         <p>

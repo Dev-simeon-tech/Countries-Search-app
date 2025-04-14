@@ -31,4 +31,7 @@
   .country-grid {
     @apply grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))];
   }
+  .scroll-up-btn:hover svg {
+    @apply -translate-y-2;
+  }
 }

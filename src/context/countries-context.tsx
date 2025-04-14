@@ -18,6 +18,8 @@ export type CountriesType = {
   topLevelDomain: string;
   currencies: { name: string }[];
   languages: { name: string }[];
+  borders: string[];
+  alpha3Code: string;
 };
 
 type CountriesContextType = {
@@ -39,18 +41,20 @@ export const CountriesProvider = ({ children }: CountriesProviderProps) => {
 
   useEffect(() => {
     const fetchCountries = async () => {
-      try {
-        const response = await fetch("/data.json");
+      setTimeout(async () => {
+        try {
+          const response = await fetch("/data.json");
 
-        if (!response.ok) {
-          throw new Error("Failed to fetch data");
+          if (!response.ok) {
+            throw new Error("Failed to fetch data");
+          }
+          const countriesData = await response.json();
+          setCountries(countriesData);
+          setLoading(false);
+        } catch (error) {
+          console.error(error);
         }
-        const countriesData = await response.json();
-        setCountries(countriesData);
-        setLoading(false);
-      } catch (error) {
-        console.error(error);
-      }
+      }, 3000);
     };
     fetchCountries();
   }, []);
