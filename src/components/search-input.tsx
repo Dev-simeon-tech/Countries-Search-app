@@ -8,13 +8,16 @@ const SearchInput = () => {
     setSearchFields(e.target.value);
   };
   return (
-    <div className='relative shadow-[1px_0px_10px_-2px_rgba(0,0,0,0.25)] lg:w-[40%]'>
+    <div
+      role='search'
+      className='relative shadow-[1px_0px_10px_-2px_rgba(0,0,0,0.25)] lg:w-[40%]'
+    >
       <svg
         xmlns='http://www.w3.org/2000/svg'
         fill='none'
         viewBox='0 0 24 24'
         strokeWidth={1.5}
-        //   stroke='currentColor'
+        aria-label='Search icon'
         className='size-6 absolute top-4 left-4 stroke-Dark-Gray dark:stroke-White'
       >
         <path

@@ -44,6 +44,7 @@ const Home = () => {
     <>
       {showButton && (
         <button
+          aria-label='Scroll to top'
           onClick={scrollToTop}
           className='fixed bottom-5 scroll-up-btn z-20 right-5 bg-White dark:bg-Dark-Blue shadow-[1px_0px_10px_-1px_rgba(0,0,0,0.25)] px-4 py-4 rounded-full  transition'
         >

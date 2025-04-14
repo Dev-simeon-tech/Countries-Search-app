@@ -13,10 +13,11 @@ const CountryCard = ({ country }: CountryCardPropTypes) => {
   const onNavigateHandler = () => navigate("countries/" + name);
   return (
     <div
+      role='link'
       onClick={onNavigateHandler}
-      className='rounded-lg overflow-hidden lg:max-w-[25rem] h-auto cursor-pointer shadow-lg'
+      className='rounded-lg overflow-hidden lg:max-w-[25rem] max-h-fit cursor-pointer shadow-lg'
     >
-      <div className='overflow-hidden h-1/2'>
+      <div className='overflow-hidden h-1/2 min-h-[10rem]'>
         <img
           className='h-full w-full lg:hover:scale-115 transition-transform duration-500  object-cover'
           src={flags.png}

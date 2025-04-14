@@ -22,10 +22,11 @@ const RegionFilter = () => {
 
   return (
     <div
-      role='select'
+      role='tabpanel'
       className='w-[60%] max-w-[15rem] shadow-[1px_0px_10px_-2px_rgba(0,0,0,0.25)] lg:w-[15rem] relative'
     >
       <button
+        aria-label='Region filter'
         onClick={onClickHandler}
         className='bg-white w-full p-4 dark:bg-Dark-Blue flex justify-between items-center rounded-md'
       >
@@ -48,7 +49,10 @@ const RegionFilter = () => {
       </button>
 
       {isOpen && (
-        <div className='bg-white absolute w-full dark:bg-Dark-Blue shadow-[1px_0px_10px_-2px_rgba(0,0,0,0.25)] py-4 lg:py-7 mt-3 rounded-md flex flex-col'>
+        <div
+          role='tablist'
+          className='bg-white absolute w-full dark:bg-Dark-Blue shadow-[1px_0px_10px_-2px_rgba(0,0,0,0.25)] py-4 lg:py-7 mt-3 rounded-md flex flex-col'
+        >
           {regions.map((regionValue, index) => (
             <button
               key={index}
